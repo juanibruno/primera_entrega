@@ -1,5 +1,5 @@
 
-function login() {
+function acceso() {
     if (codigoDeAcceso === clave) {
         alert(' *** Bienvenido!!! Disfrutá los descuentos que tenemos para vos! *** ');
         ingresar = true;
@@ -14,7 +14,7 @@ let codigoDeAcceso = 9640;
 let clave = parseInt(prompt('Ingresá el codigo de Acceso'));
 let ingresar = false;
 
-if (login()) {
+if (acceso()) {
     let usuario = prompt('Ingresa tu nombre por favor:');
     alert('Bienvenido ' + usuario);
 
