@@ -1,136 +1,157 @@
 
+const bonificaciones = [{
+    id: 0,
+    titulo: 'Descuento 1',
+    bonificacion: 30,
+    descripcion: 'Descuento valido de lunes a viernes'
+},
+{
+    id: 1,
+    titulo: 'Descuento 2',
+    bonificacion: 20,
+    descripcion: 'Descuento 3'
+},
+{
+    id: 2,
+    titulo: 'Descuento 4',
+    bonificacion: 10,
+    descripcion: 'Descuento valido de lunes a viernes'
+},
+{
+    id: 3,
+    titulo: 'Descuento 5',
+    bonificacion: 50,
+    descripcion: 'Descuento valido de lunes a viernes'
+}
+]
+
+
 function acceso() {
-    if (codigoDeAcceso === clave) {
-        alert(' *** Bienvenido!!! Disfrutá los descuentos que tenemos para vos! *** ');
+    let ingresar = false;
+    while (codigoDeDescuento === clave) {
         ingresar = true;
-    } else {
-        alert('Código de Descuento inválido');
+        break;
+    } if (codigoDeDescuento !== clave) {
+        alert('Segui probando suerte!');
     }
     return ingresar;
 }
 
+function suma(a, b) {
+    let resultado = a + b;
+    return resultado;
 
-let codigoDeAcceso = 9640;
-let clave = parseInt(prompt('Ingresá el codigo de Acceso'));
-let ingresar = false;
+}
+
+const arraynuevo = [];
+
+
+let codigoDeDescuento = 9640;
+let clave = parseInt(prompt('Ingresá el codigo de Descuento:'));
 
 if (acceso()) {
-    let usuario = prompt('Ingresa tu nombre por favor:');
-    alert('Bienvenido ' + usuario);
 
+    let nombre = prompt('Ingresa tu nombre:');
+    alert('***Bienvenido ' + nombre);
     let opcion = prompt('Elegí una opción de acuerdo a tu interés: \n1 - Riego Automático \n2 - Riego por Goteo \n3 - Tuberías \n4 - Paisajismo y Decoración');
 
     switch (opcion) {
         case "1":
             alert('**** Bienvenido a los descuentos en RIEGOS AUTOMATICOS ****');
-            let descuento = prompt('Elegí una opción: \n1 - Aspersores \n2 - Mangueras subterraneas');
+            let OpcionesRiego = prompt('Elegí una opción: \n1 - Aspersores \n2 - Mangueras subterraneas');
+            if (OpcionesRiego == '1') {
+                gano = bonificaciones[0].bonificacion;
 
-            switch (descuento) {
-                case "1":
-                    alert('¡Tenes hasta 30% de DESCUENTO en compras de ASPERSORES!');
-                    break;
-                case "2":
-                    alert('¡Tenes hasta 30% de DESCUENTO en MANGUERAS!');
-                    break;
-                default:
-                    alert('Opcion Inválida');
+                alert("*** FELICIDADES *** Ganaste " + gano + '% de DESCUENTO en Aspersores!!');
+            } else if (OpcionesRiego == '2') {
+                gano = bonificaciones[1].bonificacion;
 
-                    break;
+                alert("*** FELICIDADES *** Ganaste " + gano + '% de DESCUENTO en Accesorios para Sistemas de Riego por Goteo!!');
+            } else {
+                alert('Opción Inválida');
             }
-
             break;
         case "2":
             alert('****Bienvenido a los descuentos en RIEGO POR GOTEO****');
-            let descuento2 = prompt('Elegí una opción: \n1 - FILTROS \n2 - BOMBAS');
-            switch (descuento2) {
-                case "1":
-                    alert('¡Tenes hasta 20% de DESCUENTO en compras de FILTROS!');
-                    break;
-                case "2":
-                    alert('¡Tenes hasta 15% de DESCUENTO en BOMBAS HIDRAULICAS!');
-                    break;
-                default:
-                    alert('Opcion Inválida');
-                    break;
+            let opcionGoteo = prompt('Elegí una opción: \n1 - FILTROS \n2 - BOMBAS');
+
+            if (opcionGoteo == '1') {
+                gano = bonificaciones[2].bonificacion;
+
+                alert("*** FELICIDADES *** Ganaste " + gano + "% de DESCUENTO en FILTROS!")
+            } else if (opcionGoteo == '2') {
+                gano = bonificaciones[3].bonificacion;
+
+                alert("*** FELICIDADES *** Ganaste " + gano + "% de DESCUENTO en Bombas Hidráulicas!")
+
+            } else {
+                alert('Opción Inválida');
             }
             break;
         case "3":
             alert('**** Bienvenido a los descuentos en TUBERIAS ****');
-            let descuento3 = prompt('Elegí una opción: \n1 - TUBERIAS PRINCIPALES \n2 - TUBERIAS LATERALES');
-            switch (descuento3) {
-                case "1":
-                    alert('¡Tenes hasta 25% de DESCUENTO en compras de TUBERIAS PRINCIPALES!');
-                    break;
-                case "2":
-                    alert('¡Tenes hasta 10% de DESCUENTO en TUBERIAS LATERALES!');
-                    break;
-                default:
-                    alert('Opcion Inválida');
+            let opcionTuberia = prompt('Elegí una opción: \n1 - TUBERIAS PRINCIPALES \n2 - TUBERIAS LATERALES');
+            if (opcionTuberia == '1') {
+                gano = bonificaciones[2].bonificacion;
 
-                    break;
+                alert("*** FELICIDADES *** Ganaste " + gano + "% de DESCUENTO en TUBERIAS PRINCIPALES y SUBTERRANEAS!")
+            } else if (opcionTuberia == '2') {
+                gano = bonificaciones[0].bonificacion;
+
+                alert("*** FELICIDADES *** Ganaste " + gano + "% de DESCUENTO en TUBERIAS LATERALES!")
+            } else {
+                alert('Opción Inválida');
             }
             break;
         case "4":
-            alert('**** Bienvenido a los descuentos en PAISAJIMSO Y DECO ****');
-            let descuento4 = prompt('Elegí una opción: \n1 - Proyectos \n2 - Productos');
-            switch (descuento4) {
-                case "1":
-                    alert('¡Tenes hasta 30% de DESCUENTO en tu proximo proyecto! ¡Mejorá tu jardin con los mejores!');
-                    break;
-                case "2":
-                    alert('¡Tenes hasta 30% de DESCUENTO en elementos de jardinería!');
-                    break;
-                default:
-                    alert('Opcion Inválida');
-                    break;
+            alert('**** Bienvenido a los descuentos en PAISAJISMO Y DECO ****');
+            let opcionPaisajismo = prompt('Elegí una opción: \n1 - Proyectos \n2 - Productos');
+            if (opcionPaisajismo == '1') {
+                gano = bonificaciones[1].bonificacion;
+
+                alert("*** FELICIDADES *** Ganaste " + gano + "% de DESCUENTO en Proyectos de Mejora de Espacios Verdes!")
+            } else if (opcionPaisajismo == '2') {
+                gano = bonificaciones[0].bonificacion;
+                alert("*** FELICIDADES *** Ganaste " + gano + "% de DESCUENTO en Productos de Jardinería!")
+            } else {
+                alert('Opción Inválida')
             }
             break;
     }
-    let sorteo = prompt('¡¡probá suerte!! ¡Elegí un numero del 1 al 20 y ganá mas descuentos!');
-    if (sorteo < 5) {
-        alert('**** SEGUI PARTICIPANDO ****');
-    } else if (sorteo >= 6 && sorteo <= 10) {
-        alert('**** FELICITACIONES!! GANASTE UN 10% De DESCUENTO ****');
-
-    } else if (sorteo > 10 && sorteo <= 15) {
-        alert('**** FELICITACIONES!! GANASTE UN 40% De DESCUENTO ****');
-
-    } else if (sorteo > 15 && sorteo <= 20) {
-
-        alert('**** FELICITACIONES!! GANASTE UN 15% De DESCUENTO  ****');
-
-    } else {
-        alert('Elegiste un numero inválido')
-    }
-
-
-
 } else {
     alert('***Conseguí mas codigos de descuento en nuestras redes!***');
 }
+arraynuevo.push(gano);
 
+alert('*** Vamos por mas *** ¡¡hace click y obtene mas descuentos!!')
+let numero = parseInt(Math.random() * 100);
+let descuento = 0;
 
+function sorteo() {
+    if (numero <= 25) {
+        alert("ganaste un 20% de DESCUENTO PARA TUS PROXIMAS COMPRAS");
+        descuento = 20;
+    } else if (numero > 25 && numero <= 50) {
+        alert("ganaste un 15% de DESCUENTO PARA TUS PROXIMAS COMPRAS");
+        descuento = 15;
+    } else if (numero > 50 && numero <= 75) {
+        alert("ganaste un 20% de DESCUENTO PARA TUS PROXIMAS COMPRAS");
+        descuento = 20;
+    } else {
+        alert("ganaste un 25% de DESCUENTO PARA TUS PROXIMAS COMPRAS");
+        descuento = 25;
+    }
+    return descuento;
 
+}
+sorteo(numero);
 
-alert("Hasta prontos");
+console.log(descuento);
+console.log(gano);
 
+let resutadoFinal = suma(descuento, gano);
+alert('ganaste en total ' + resutadoFinal + '% de DESCUENTO en Aqua System');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+alert("MUCHAS GRACIAS POR PARTICIPAR!!");
 
 
