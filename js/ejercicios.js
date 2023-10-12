@@ -48,8 +48,7 @@ alert('info de '+personaje2.hijos.primero)
 
 
 
-
-
+localStorage.setItem('hola', 'esto es un ejemplo' )
 
 
 
